@@ -1,0 +1,43 @@
+# Codemagic cloud build: iOS app -> TestFlight (no Mac needed).
+# Before using: create an App Store Connect API key in Codemagic (Teams > Integrations),
+# register your bundle id in Apple Developer, and change the three marked values.
+workflows:
+  ios-testflight:
+    name: iOS TestFlight
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    working_directory: flutter_app
+    integrations:
+      app_store_connect: CodemagicKey      # CHANGE: the name of your API key in Codemagic
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.example.periodtracker   # CHANGE: your own unique bundle id
+    scripts:
+      - name: Generate iOS project (keeps our lib and pubspec)
+        script: |
+          cp lib/main.dart /tmp/main.dart
+          cp pubspec.yaml /tmp/pubspec.yaml
+          flutter create --platforms=ios --org com.example --project-name period_tracker .
+          cp /tmp/main.dart lib/main.dart
+          cp /tmp/pubspec.yaml pubspec.yaml
+      - name: Set bundle id
+        script: |
+          sed -i '' "s/com.example.periodTracker/com.example.periodtracker/g" ios/Runner.xcodeproj/project.pbxproj || true
+      - name: Get packages
+        script: flutter pub get
+      - name: App icon
+        script: dart run flutter_launcher_icons
+      - name: Set up code signing
+        script: xcode-project use-profiles
+      - name: Build ipa
+        script: flutter build ipa --release --build-number=$BUILD_NUMBER --export-options-plist=/Users/builder/export_options.plist
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

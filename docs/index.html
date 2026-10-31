@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="si">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ඔසප් සටහන · Period Tracker</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Period Tracker">
+<meta name="theme-color" content="#f3eef6">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAElklEQVR42u2dO3JTQRBFn7smICYhI/UCHLAYtuCUVbAOFsMGXKXUGYljQgJXuVQYGcl609P39jkRmMLS9Jy5Pe+jp5uHu/sN4F8EJQDkAOQA5ADkAOQA5ADkAOQA5ADkAEAOQA5ADkAOQA5ADkAOQA5wZfQc9sfbz5f+l6fDI3Kgwrm/xF6XgRC7vISlKAMn9n1dJ0sGTmCJpxx1nLC0ZKBFzltVVGSgBYo4yCGqha4iAy1Q5BSBGYxLMjlctVCJkMAMRqqUHH20KB4hgRnHfPrxjVVRVI4KZuBHubbSsJXUbzGBGa8bytrwqFOToAocxRSVo4gZr6OiQngsr09gBvlRTo46ZpwKiSLhsbBWgRnv/lf7ikVnM+gvteQoZcY5wVAnPPKrF23NID+qH8oWj42C4eGZHMSGXCWjpxmXhkG18MipZzQ0g/xgz7FzDDTceYSB4Glz3K25RCszaC60lYlLv1VzCVGpIaHO0ceMvRZ9wfCYVG0eGAe5chjHRqvwaJEcM+ayw840JBSGJZX3T455S9w+PKK4vLCw/ubJMXtxe4dHlNUWls+Cc3LkLGvj8AjMwI/pctBT/DqLZ3LkL2XL8ODaCkyWQ+6jSvbhscuMkBzQRo61y9ds57GDHCofme/mx/XzQluBBnLUWbI2zYXkgGlylH3iG+/n+tkhOcBajpo93mDnQXKArxyVF6h6eARm4McUObiHoz7XzJFwcqgsSt3wYEMKdnJoLUfR8AjM4D37yKHbwuXeOXsOcJFD/bSS1vsnOcBCDo+baIRGQXKAvhxON3arjIXkAOQAVzn8PqYsMSKSA04yOgzy98/D8x8+fLllypPkeDo8Fr/f50WL47+2UuTp8EhbgZZ7jnfv3f6Kjf/+nD0pyQHt5Xg7HoqEB3JAVzmu2QxD5UMVkgOQA5DjmLfPdHGqNEkOth2WGw7ztnIqHogN5IBruXm4u9/lF029AnflmeaaV2V/ff1euadsTS7Z00doK1BVDo5ZnI5TSA6wkGPq3o0RZchBZ3HqKbQVSJRjXng4dZZ5Y9m3/iQHJMpBeHjEBskB6XIQHgaxQXLACjkID/XYmJsc+CFthnBb0fJDNO3mysEJ9dlMrXDovnuV5ajYUByOVur7IX3snSHHVMErV7/+XaIlkqOhH+pmpLaVVn4YmLE53X3+PB/LH5fjdGtB6oY0Qfm1c5Pw6plnB7KPVoz9MDNj2/ETbxeR84DKtBaTo2P+GcU1cmyJX1g8VZG0lFpyrnmZHFvuF1rvrkhm81p1FWKlHNuKLzy/0pL8Dc3C61OL5Vjix0WurD38WXvlcr0cy/0oy/Jr2kEVMOMUo1QtiJBSSyWoCxXQkKO5H9XGPsrWqFWLqbkkgnoxUqXk6BMhxRdAUEHGJZkcrhGiovuQq6m0IlopOETrK6eIYnMc0ktQQhHdPZP2DcYvdS9oicE+2uTu8zqWOB1buT0Yf5Ullsfbtt+acDxbk0SxP4fb4is1Xs/iO3RpeEVwbC3h3oBz4IFxgByAHIAcgByAHIAcgByAHIAcgBwAyAHIAcgByAHIAcgByAHq/AFgWdWC1JPwMwAAAABJRU5ErkJggg==">
+<style>
+:root{--bg:#f3eef6;--sheet:#ffffff;--ink:#2a1838;--mut:#7d6c8a;--berry:#b5305f;--coral:#e8735f;--dot:#dccfe6;--line:#e4daec;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17101e;--sheet:#241833;--ink:#f4ecf8;--mut:#a794b6;--berry:#ff7aa5;--coral:#ff9a85;--dot:#3b2b4d;--line:#352746}}
+:root[data-theme="dark"]{--bg:#17101e;--sheet:#241833;--ink:#f4ecf8;--mut:#a794b6;--berry:#ff7aa5;--coral:#ff9a85;--dot:#3b2b4d;--line:#352746}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Noto Sans Sinhala","Iskoola Pota",sans-serif;-webkit-text-size-adjust:100%}
+main{max-width:460px;margin:0 auto;padding:14px 18px 40px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px}
+.brand img{width:34px;height:34px;border-radius:10px}
+.seg{display:flex;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:none;color:var(--mut);font:inherit;font-size:14px;padding:4px 12px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--berry);color:#fff}
+button:focus-visible,input:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
+.dial{position:relative;width:min(100%,320px);aspect-ratio:1;margin:18px auto 6px}
+.dial svg{width:100%;height:100%;display:block}
+.dial circle{transition:fill .3s,r .3s}
+.mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 22%}
+.num{font:700 68px/1 Georgia,"Iowan Old Style",serif;color:var(--berry);letter-spacing:-1px}
+.num.small{font-size:30px;letter-spacing:0}
+.lbl{color:var(--mut);font-size:15px;margin-top:6px}
+.nextdate{text-align:center;margin:4px 0 22px}
+.nextdate .k{color:var(--mut);font-size:14px}
+.nextdate .d{font:600 22px/1.3 Georgia,"Iowan Old Style",serif;margin-top:2px}
+.nextdate .c{color:var(--mut);font-size:14px;margin-top:2px}
+.sheet{background:var(--sheet);border-radius:24px;padding:6px 18px;border:1px solid var(--line)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row .t{font-weight:600}
+.row .s{color:var(--mut);font-size:13px}
+input[type=date]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px;max-width:170px}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:20px;line-height:1;cursor:pointer}
+.step b{min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+.today{display:block;width:100%;margin-top:12px;border:0;background:var(--berry);color:#fff;font:inherit;font-weight:600;padding:13px;border-radius:16px;cursor:pointer}
+h2{font-size:17px;margin:26px 4px 6px}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;position:relative}
+.tl:before{content:"";position:absolute;left:6px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:8px 0}
+.tl li:before{content:"";position:absolute;left:-22px;top:15px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--berry)}
+.tl li:first-child:before{background:var(--berry)}
+.tl .m{color:var(--mut);font-size:13px}
+.note{color:var(--mut);font-size:13px;margin:22px 4px 0}
+[hidden]{display:none!important}.ghost{background:none;color:var(--berry);border:1px solid var(--berry)}.hist{list-style:none;margin:0;padding:0}.hist li{display:flex;justify-content:space-between;align-items:center;padding:6px 4px;border-bottom:1px solid var(--line)}.hist button{border:0;background:none;color:var(--mut);font-size:22px;cursor:pointer}.warn{color:var(--coral);font-weight:600}.ai{white-space:pre-wrap;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.dial circle{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand"><img id="logo" alt="" width="34" height="34"><span id="title"></span></div>
+    <div class="seg" role="group" aria-label="Language">
+      <button type="button" data-l="si">සිං</button><button type="button" data-l="en">EN</button>
+    </div>
+  </header>
+
+  <div class="dial">
+    <svg viewBox="0 0 300 300" aria-hidden="true"><g id="dots"></g></svg>
+    <div class="mid"><div class="num" id="num">–</div><div class="lbl" id="lbl"></div></div>
+  </div>
+  <div class="nextdate"><div class="k" id="k_next"></div><div class="d" id="d_next"></div><div class="c" id="c_day"></div></div>
+
+  <div class="sheet">
+    <div class="row" style="flex-wrap:wrap">
+      <div><div class="t" id="l_last"></div></div>
+      <input type="date" id="last" aria-labelledby="l_last">
+    </div>
+    <div class="row"><div><div class="t" id="l_cyc"></div></div>
+      <div class="step"><button type="button" data-k="cyc" data-d="-1" aria-label="-1">−</button><b id="v_cyc"></b><button type="button" data-k="cyc" data-d="1" aria-label="+1">+</button></div></div>
+    <div class="row"><div><div class="t" id="l_bef"></div></div>
+      <div class="step"><button type="button" data-k="bef" data-d="-1" aria-label="-1">−</button><b id="v_bef"></b><button type="button" data-k="bef" data-d="1" aria-label="+1">+</button></div></div>
+  </div>
+  <button class="today" id="tdy" type="button"></button>
+
+  <h2 id="h_ins"></h2>
+  <div class="sheet" id="ins"></div>
+  <div id="aibox" hidden>
+    <button class="today ghost" id="ai" type="button"></button>
+    <p class="note" id="ainote"></p>
+    <div class="sheet ai" id="aiout" hidden></div>
+  </div>
+  <h2 id="h_hist"></h2>
+  <ul class="hist" id="hist"></ul>
+  <h2 id="h_upc"></h2>
+  <ul class="tl" id="tl"></ul>
+  <p class="note" id="note"></p>
+</main>
+
+<script>
+var T={
+  si:{title:"ඔසප් සටහන",last:"අන්තිම ඔසප් දිනය ආරම්භ වූ දිනය",cyc:"චක්‍රයේ දිග",bef:"කලින් මතක් කරන්න",days:" දවස්",
+      next:"ඊළඟ ඔසප් දිනය (ඇස්තමේන්තුව)",none:"පහළින් අන්තිම ඔසප් දිනය තෝරන්න",togo:"දවස් ඉතිරියි",today:"අද",cd:"චක්‍රයේ දවස ",tdy:"ඔසප් අද ආරම්භ විය",upc:"ඉදිරි දින",ins:"ඔබේ චක්‍රය",avg:"සාමාන්‍ය චක්‍රය",range:"අඩුම සහ වැඩිම",reg_ok:"ඔබේ චක්‍රය තරමක් ස්ථාවරයි.",reg_var:"ඔබේ චක්‍රවල දිග තරමක් වෙනස් වෙනවා. තවත් දින සටහන් කරන තරමට ඇස්තමේන්තු වඩා හොඳ වෙයි. කනස්සල්ලක් තියෙනවා නම් වෛද්‍යවරයෙක් හමුවන්න.",reg_out:"ඔබේ සාමාන්‍ය චක්‍රය දවස් 21 සහ 35 අතර නොවේ. කනස්සල්ලක් තියෙනවා නම් වෛද්‍යවරයෙක් හමුවන්න.",need:"විශ්ලේෂණයට අවම වශයෙන් ඔසප් ආරම්භ දින 3ක් සටහන් කරන්න.",late:"ඔසප් දවස් X කින් ප්‍රමාදයි (එය ආරම්භ වී නැතිනම් හෝ ඔබ සටහන් කර නැතිනම්). ප්‍රමාදය ගැන කනස්සල්ලක් තියෙනවා නම් වෛද්‍යවරයෙක් හමුවන්න.",ai:"AI විශ්ලේෂණය",aierr:"AI විශ්ලේෂණය දැන් ලබා ගන්න බෑ. පසුව නැවත උත්සාහ කරන්න.",ainote:"මේ බොත්තම ඔබන විට චක්‍රවල දිග අංක පමණක් AI වෙත යවයි. දින හෝ වෙනත් විස්තර යවන්නේ නෑ.",hist:"සටහන් කළ දින",auto:"ස්වයංක්‍රීය",remind:"මතක් කිරීම: ",
+      note:"මේවා ඇස්තමේන්තු පමණයි, වෛද්‍ය උපදෙස් නොවේ. ඔබේ දත්ත මේ උපාංගයේ පමණක් තබා ගනී. මතක් කිරීම් ලබා ගන්න ඉහත දින ඔබේ Calendar app එකට alert එකක් සමඟ එකතු කරන්න."},
+  en:{title:"Period Tracker",last:"First day of last period",cyc:"Cycle length",bef:"Remind me before",days:" days",
+      next:"Next period (estimate)",none:"Pick your last period date below",togo:"days to go",today:"Today",cd:"Cycle day ",tdy:"Period started today",upc:"Coming up",ins:"Your cycle",avg:"Average cycle",range:"Shortest and longest",reg_ok:"Your cycle looks fairly regular.",reg_var:"Your cycle length varies a fair bit. Logging more dates will improve the estimates. If you are concerned, see a doctor.",reg_out:"Your average cycle is outside 21 to 35 days. If you are concerned, see a doctor.",need:"Log at least 3 period start dates to see an analysis.",late:"Your period may be X days late (or it has not been logged yet). If you are worried about the delay, see a doctor.",ai:"AI analysis",aierr:"AI analysis is not available right now. Please try again later.",ainote:"Pressing this sends only your cycle lengths (numbers) to the AI. No dates or other details are sent.",hist:"Logged dates",auto:"auto",remind:"Reminder: ",
+      note:"These are estimates only, not medical advice. Your data stays on this device. To get reminders, add the dates above to your Calendar app with an alert."}
+};
+var lang="si",$=function(i){return document.getElementById(i)};
+try{lang=localStorage.getItem("pt_lang")||"si"}catch(e){}
+var hist=[];try{hist=JSON.parse(localStorage.getItem("pt_hist")||"[]")}catch(e){}
+try{var s=JSON.parse(localStorage.getItem("pt_data")||"{}");if(!hist.length&&s.last)hist=[s.last]}catch(e){}
+var st={cyc:28,bef:2};
+try{var s2=JSON.parse(localStorage.getItem("pt_data")||"{}");if(s2.cyc)st.cyc=+s2.cyc;if(s2.bef!=null)st.bef=+s2.bef}catch(e){}
+
+function iso(d){return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)}
+function pd(v){var p=v.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+function add(d,n){var x=new Date(d);x.setDate(x.getDate()+n);return x}
+function fmt(d){return d.toLocaleDateString(lang==="si"?"si-LK":"en-GB",{weekday:"short",day:"numeric",month:"long",year:"numeric"})}
+
+function intervals(){var r=[];for(var i=1;i<hist.length;i++)r.push(Math.round((pd(hist[i])-pd(hist[i-1]))/864e5));return r}
+function valid(){return intervals().filter(function(x){return x>=15&&x<=90})}
+function autoCyc(){var iv=valid().slice(-6);if(!iv.length)return 0;return Math.round(iv.reduce(function(p,c){return p+c},0)/iv.length)}
+function eff(){var a=autoCyc();return a>=21&&a<=45?a:st.cyc}
+function addDate(v){if(!v||v>iso(new Date()))return;if(hist.indexOf(v)<0){hist.push(v);hist.sort()}}
+function side(cyc){
+  var t=T[lang],iv=valid(),o="",l="",i;
+  $("h_ins").textContent=t.ins;$("h_hist").textContent=t.hist;$("ai").textContent=t.ai;$("ainote").textContent=t.ainote;
+  if(iv.length<2){o='<div class="row"><div class="s">'+t.need+'</div></div>'}
+  else{
+    var mn=Math.min.apply(null,iv),mx=Math.max.apply(null,iv),a=Math.round(iv.reduce(function(p,c){return p+c},0)/iv.length);
+    o='<div class="row"><div class="t">'+t.avg+'</div><b>'+a+t.days+'</b></div><div class="row"><div class="t">'+t.range+'</div><b>'+mn+" - "+mx+t.days+'</b></div>';
+    o+='<div class="row"><div class="s">'+((a<21||a>35)?t.reg_out:(mx-mn>7?t.reg_var:t.reg_ok))+'</div></div>';
+  }
+  var v=hist.length?hist[hist.length-1]:"";
+  if(v){var now=new Date(),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate()),late=Math.round((t0-add(pd(v),cyc))/864e5);
+    if(late>=7)o+='<div class="row"><div class="s warn">'+t.late.replace("X",late)+'</div></div>'}
+  $("ins").innerHTML=o;
+  for(i=hist.length-1;i>=0;i--)l+='<li><span>'+fmt(pd(hist[i]))+'</span><button type="button" data-x="'+hist[i]+'" aria-label="Delete">×</button></li>';
+  $("hist").innerHTML=l;
+}
+
+function dots(N,idx){
+  var h="",R=122,i,a,x,y,c,r;
+  for(i=0;i<N;i++){
+    a=(-90+i*360/N)*Math.PI/180;x=150+R*Math.cos(a);y=150+R*Math.sin(a);
+    r=N>36?4:5;c="var(--dot)";
+    if(idx>=0&&i<idx)c="var(--berry)";
+    if(i===0)c="var(--coral)";
+    if(i===idx){h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="13" fill="none" stroke="var(--berry)" stroke-width="2"/>';r=7;c="var(--berry)"}
+    h+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(i===0?r+1.5:r)+'" fill="'+c+'"/>';
+  }
+  $("dots").innerHTML=h;
+}
+
+function render(){
+  var t=T[lang],cyc=eff(),bef=st.bef,v=hist.length?hist[hist.length-1]:"";$("last").value=v;
+  document.documentElement.lang=lang;
+  $("title").textContent=t.title;
+  document.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===lang)});
+  $("l_last").textContent=t.last;$("l_cyc").textContent=t.cyc+(autoCyc()>=21&&autoCyc()<=45?" ("+t.auto+" "+cyc+")":"");$("l_bef").textContent=t.bef;
+  $("v_cyc").textContent=st.cyc+t.days;$("v_bef").textContent=bef+t.days;
+  $("tdy").textContent=t.tdy;$("h_upc").textContent=t.upc;$("note").textContent=t.note;$("k_next").textContent=t.next;
+  try{localStorage.setItem("pt_lang",lang);localStorage.setItem("pt_data",JSON.stringify({last:v,cyc:st.cyc,bef:bef}));localStorage.setItem("pt_hist",JSON.stringify(hist))}catch(e){}
+  side(cyc);
+  if(!v){dots(cyc,-1);$("num").textContent="–";$("num").className="num";$("lbl").textContent=t.none;$("d_next").textContent="";$("c_day").textContent="";$("tl").innerHTML="";return}
+  var now=new Date(),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  var n=add(pd(v),cyc);
+  while(n<t0)n=add(n,cyc);
+  var diff=Math.round((n-t0)/864e5),idx=(cyc-diff)%cyc;
+  dots(cyc,idx);
+  $("num").textContent=diff===0?t.today:diff;$("num").className="num"+(diff===0?" small":"");
+  $("lbl").textContent=diff===0?"":t.togo;
+  $("d_next").textContent=fmt(n);
+  $("c_day").textContent=t.cd+(idx+1)+" / "+cyc;
+  var h="";
+  for(var i=0;i<6;i++){var d=add(n,i*cyc);h+="<li><div>"+fmt(d)+'</div><div class="m">'+t.remind+fmt(add(d,-bef))+"</div></li>"}
+  $("tl").innerHTML=h;
+}
+
+$("last").max=iso(new Date());
+if(st.cyc<21||st.cyc>45)st.cyc=28;
+$("logo").src=document.querySelector('link[rel="apple-touch-icon"]').href;
+$("last").addEventListener("input",function(){addDate($("last").value);render()});
+$("tdy").addEventListener("click",function(){addDate(iso(new Date()));render()});
+document.querySelectorAll(".seg button").forEach(function(b){b.addEventListener("click",function(){lang=b.dataset.l;render()})});
+document.querySelectorAll(".step button").forEach(function(b){b.addEventListener("click",function(){
+  var k=b.dataset.k,d=+b.dataset.d,lim=k==="cyc"?[21,45]:[0,5];
+  st[k]=Math.min(lim[1],Math.max(lim[0],st[k]+d));render()})});
+$("hist").addEventListener("click",function(e){var d=e.target.getAttribute&&e.target.getAttribute("data-x");if(d){hist=hist.filter(function(x){return x!==d});render()}});
+var smp=null;
+try{if(window.claude&&window.claude.use)window.claude.use("sample").then(function(x){if(x){smp=x;$("aibox").hidden=false}}).catch(function(){})}catch(e){}
+$("ai").addEventListener("click",function(){
+  var iv=valid(),o=$("aiout");o.hidden=false;
+  if(iv.length<2||!smp){o.textContent=T[lang].need;return}
+  o.textContent="…";
+  smp("You are a gentle helper inside a period tracking app. Cycle lengths in days, oldest to newest: "+iv.join(", ")+". Write 3 to 5 short, plain sentences in "+(lang==="si"?"Sinhala":"English")+" describing the pattern (regularity, any trend). Do not diagnose. If anything looks unusual (cycles under 21 or over 35 days, large swings), suggest talking to a doctor. No lists, no headings.",{onText:function(r){o.textContent=r.text}}).catch(function(){o.textContent=T[lang].aierr})
+});
+render();
+</script>
+</body>
+</html>
